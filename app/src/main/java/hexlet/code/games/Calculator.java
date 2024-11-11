@@ -20,15 +20,11 @@ public class Calculator {
         }
         public static void runGame() {
     final var description = "What is the result of the expression?";
-    String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
+    String[][] roundsData = new String[3][2];
 
             for (int i = 0; i < 3; i += 1) {
-        roundsData[i] = generateRoundData(); // записываем в массив 3 на 2 результат генерации раунда
-        // i = 0; [ ["5 + 3", "8"], [], [] ]
-        // i = 1; [ ["5 + 3", "8"], ["7 * 2", "114"], [] ]
-        // i = 2; [ ["5 + 3", "8"], ["7 * 2", "114"], ["11 - 5", "6"] ]
+        roundsData[i] = generateRoundData();
     }
-
             Engine.run(description, roundsData);
 }
 
