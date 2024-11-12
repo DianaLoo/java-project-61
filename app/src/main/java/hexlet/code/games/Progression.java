@@ -19,7 +19,7 @@ public class Progression {
         String[] prog = new String[2];
         prog[1] = progression[value];
         progression[value] = "..";
-        String question = String.join(" ",progression);
+        String question = String.join(" ", progression);
         prog[0] = question;
         return prog;
     }
@@ -28,7 +28,7 @@ public class Progression {
         final var description = "What number is missing in the progression?";
         String[][] roundsData = new String[3][2];
 
-        for (var i = 0; i < 3; i ++) {
+        for (var i = 0; i < 3; i++) {
             roundsData[i] = generateRoundData();
         }
 
@@ -38,9 +38,9 @@ public class Progression {
     public static String[] checkAnswer(int number1, int step, int size) {
         var progression = new String[size];
         progression[0] = String.valueOf(number1);
-        for( var i = 1; i < size; i++) {
-        number1 += step;
-        progression[i] = String.valueOf(number1);
+        for (var i = 1; i < size; i++) {
+            number1 += step;
+            progression[i] = String.valueOf(number1);
         }
         return progression;
     }
