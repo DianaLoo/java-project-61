@@ -12,8 +12,10 @@ public class Progression {
     private static String[] generateRoundData() {
         Random random = new Random();
         var number1 = random.nextInt(BOUND);
-        var step = 1 + random.nextInt(10);
-        var size = 5 + random.nextInt(5);
+        var maxStep = 10;
+        var step = 1 + random.nextInt(maxStep);
+        var minSize = 5;
+        var size = minSize + random.nextInt(minSize);
         var value = random.nextInt(size);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];
@@ -26,9 +28,10 @@ public class Progression {
 
     public static void runGame() {
         final var description = "What number is missing in the progression?";
-        String[][] roundsData = new String[3][2];
+        var round = 3;
+        String[][] roundsData = new String[round][2];
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < round; i++) {
             roundsData[i] = generateRoundData();
         }
 

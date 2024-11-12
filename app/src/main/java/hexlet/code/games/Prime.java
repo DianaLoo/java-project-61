@@ -18,16 +18,17 @@ public class Prime {
     }
     private static String[] generateRoundData() {
         Random random = new Random();
-        var number = random.nextInt(100);
+        var maxNumber = 100;
+        var number = random.nextInt(maxNumber);
         var question = String.valueOf(number);
         var answer = gamePrime(number) ? "yes" : "no";
         return new String[] {question, answer};
     }
     public static void runGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = new String[3][2];
-
-        for (int i = 0; i < 3; i += 1) {
+        var round = 3;
+        String[][] roundsData = new String[round][2];
+        for (int i = 0; i < round; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

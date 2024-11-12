@@ -11,7 +11,8 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(description);
-        for (int i = 0; i < 3; i++) {
+        var round = 3;
+        for (int i = 0; i < round; i++) {
             String question = roundsData[i][0];
             String correctAnswer = roundsData[i][1];
             System.out.println("Question: " + question);

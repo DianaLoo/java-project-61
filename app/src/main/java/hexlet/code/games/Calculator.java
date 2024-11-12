@@ -20,9 +20,9 @@ public class Calculator {
     }
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        String[][] roundsData = new String[3][2];
-
-        for (int i = 0; i < 3; i += 1) {
+        var round = 3;
+        String[][] roundsData = new String[round][2];
+        for (int i = 0; i < round; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);
@@ -35,16 +35,12 @@ public class Calculator {
         return operators[rdm];
     }
     private static String checkAnswer(int randomNumber1, int randomNumber2, String randomOperator) {
-        switch (randomOperator) {
-            case "+":
-                return String.valueOf(randomNumber1 + randomNumber2);
-            case "-":
-                return String.valueOf(randomNumber1 - randomNumber2);
-            case "*":
-                return String.valueOf(randomNumber1 * randomNumber2);
-            default:
-                return "";
-        }
+        return switch (randomOperator) {
+            case "+" -> String.valueOf(randomNumber1 + randomNumber2);
+            case "-" -> String.valueOf(randomNumber1 - randomNumber2);
+            case "*" -> String.valueOf(randomNumber1 * randomNumber2);
+            default -> "";
+        };
     }
 }
 
