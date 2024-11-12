@@ -8,3 +8,5 @@
 ![GCD](https://github.com/user-attachments/assets/52f245b2-2eec-42c2-956a-3b2841968495)
 ![Progression](https://github.com/user-attachments/assets/8be6cd7e-b84d-4c47-a451-4c4e4b8ca139)
 ![Progression2](https://github.com/user-attachments/assets/201bf6ea-d2e1-4b08-a7d6-279e72b0b6fa)
+![Prime2](https://github.com/user-attachments/assets/9370eede-6886-4f4d-8b9f-b700fd5b87bd)
+![Prime](https://github.com/user-attachments/assets/c1a8c32d-1b6c-436b-a903-ccd05d4a1a80)
