@@ -7,15 +7,14 @@ import java.util.Random;
 public class Progression {
 
     static final int BOUND = 100;
-
-
+    static final int ROUND = 3;
+    static final int MAXSTEP = 10;
+    static final int MINSIZE = 5;
     private static String[] generateRoundData() {
         Random random = new Random();
         var number1 = random.nextInt(BOUND);
-        var maxStep = 10;
-        var step = 1 + random.nextInt(maxStep);
-        var minSize = 5;
-        var size = minSize + random.nextInt(minSize);
+        var step = 1 + random.nextInt(MAXSTEP);
+        var size = MINSIZE + random.nextInt(MINSIZE);
         var value = random.nextInt(size);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];
@@ -28,10 +27,9 @@ public class Progression {
 
     public static void runGame() {
         final var description = "What number is missing in the progression?";
-        var round = 3;
-        String[][] roundsData = new String[round][2];
+        String[][] roundsData = new String[ROUND][2];
 
-        for (var i = 0; i < round; i++) {
+        for (var i = 0; i < ROUND; i++) {
             roundsData[i] = generateRoundData();
         }
 

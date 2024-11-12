@@ -8,7 +8,7 @@ import java.util.Random;
 public class Calculator {
     static final int BOUND = 100;
     static final int OPERATOR = 3;
-
+    static final int ROUND = 3;
     private static String[] generateRoundData() {
         Random random = new Random();
         int number1 = random.nextInt(BOUND);
@@ -20,9 +20,8 @@ public class Calculator {
     }
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        var round = 3;
-        String[][] roundsData = new String[round][2];
-        for (int i = 0; i < round; i += 1) {
+        String[][] roundsData = new String[ROUND][2];
+        for (int i = 0; i < ROUND; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

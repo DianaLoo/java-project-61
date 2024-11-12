@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class GCD {
     static final int BOUND = 100;
-
+    static final int ROUND = 3;
     private static String[] generateRoundData() {
         Random random = new Random();
         int number1 = random.nextInt(BOUND);
@@ -18,9 +18,8 @@ public class GCD {
 
     public static void runGame() {
         final var description = "Find the greatest common divisor of given numbers.";
-        String[][] roundsData = new String[3][2];
-        var round = 3;
-        for (int i = 0; i < round; i += 1) {
+        String[][] roundsData = new String[ROUND][2];
+        for (int i = 0; i < ROUND; i += 1) {
             roundsData[i] = generateRoundData();
         }
 

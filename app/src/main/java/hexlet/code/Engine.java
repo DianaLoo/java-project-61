@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
+    static final int ROUND = 3;
     public static void run(String description, String[][] roundsData) {
         Scanner scanner = new Scanner(System.in);
         //System.out.println("Welcome to the Brain Games!");
@@ -11,8 +11,7 @@ public class Engine {
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(description);
-        var round = 3;
-        for (int i = 0; i < round; i++) {
+        for (int i = 0; i < ROUND; i++) {
             String question = roundsData[i][0];
             String correctAnswer = roundsData[i][1];
             System.out.println("Question: " + question);
