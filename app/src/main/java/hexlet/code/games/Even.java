@@ -1,13 +1,8 @@
 package hexlet.code.games;
-
-//import java.util.Scanner;
-
 import hexlet.code.Engine;
-
 import java.util.Random;
 
 public class Even {
-
     private static boolean gameEven(int number) {
         return number % 2 == 0;
     }
@@ -21,11 +16,9 @@ public class Even {
     public static void runGame() {
         final var description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] roundsData = new String[3][2];
-
         for (int i = 0; i < 3; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);
     }
-
 }
