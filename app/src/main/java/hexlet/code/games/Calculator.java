@@ -2,20 +2,16 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-//import java.util.Scanner;
+import static hexlet.code.Utils.getRandomInt;
 
 public class Calculator {
-    static final int BOUND = 100;
-    static final int OPERATOR = 3;
     static final int ROUND = 3;
     private static String[] generateRoundData() {
-        Random random = new Random();
-        int number1 = random.nextInt(BOUND);
-        int number2 = random.nextInt(BOUND);
-        String operator = getRandom();
+        int number1 = getRandomInt(0, 100);
+        int number2 = getRandomInt(0, 100);
+        String operator = String.valueOf(getRandom());
         String question = number1 + " " + operator + " " + number2;
-        String answer = checkAnswer(number1, number2, operator);
+        String answer = String.valueOf(checkAnswer(number1, number2, operator));
         return new String[] {question, answer};
     }
     public static void runGame() {
@@ -27,18 +23,17 @@ public class Calculator {
         Engine.run(description, roundsData);
     }
 
-    private static String getRandom() {
-        Random gen = new Random();
-        int rdm = gen.nextInt(OPERATOR);
-        String[] operators = {"+", "-", "*"};
+    private static char getRandom() {
+        int rdm = getRandomInt(0, 3);
+        char[] operators = new char[]{'+', '-', '*'};
         return operators[rdm];
     }
-    private static String checkAnswer(int randomNumber1, int randomNumber2, String randomOperator) {
+    private static int checkAnswer(int randomNumber1, int randomNumber2, String randomOperator) {
         return switch (randomOperator) {
-            case "+" -> String.valueOf(randomNumber1 + randomNumber2);
-            case "-" -> String.valueOf(randomNumber1 - randomNumber2);
-            case "*" -> String.valueOf(randomNumber1 * randomNumber2);
-            default -> "";
+            case "+" -> randomNumber1 + randomNumber2;
+            case "-" -> randomNumber1 - randomNumber2;
+            case "*" -> randomNumber1 * randomNumber2;
+            default -> 0;
         };
     }
 }

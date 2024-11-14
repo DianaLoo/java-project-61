@@ -2,11 +2,10 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Utils.getRandomInt;
 
 public class Prime {
     static final int ROUND = 3;
-    static final int MAXNUMBER = 100;
     private static boolean gamePrime(int number) {
         if (number <= 1) {
             return false; // числа 0 и 1 не являются простыми
@@ -19,8 +18,7 @@ public class Prime {
         return true;
     }
     private static String[] generateRoundData() {
-        Random random = new Random();
-        var number = random.nextInt(MAXNUMBER);
+        var number = getRandomInt(0, 100);
         var question = String.valueOf(number);
         var answer = gamePrime(number) ? "yes" : "no";
         return new String[] {question, answer};

@@ -2,15 +2,13 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import static hexlet.code.Utils.getRandomInt;
 
 public class GCD {
-    static final int BOUND = 100;
     static final int ROUND = 3;
     private static String[] generateRoundData() {
-        Random random = new Random();
-        int number1 = random.nextInt(BOUND);
-        int number2 = random.nextInt(BOUND);
+        int number1 = getRandomInt(0, 100);
+        int number2 = getRandomInt(0, 100);
         String question = number1 + " " + number2;
         String answer = checkAnswer(number1, number2);
         return new String[]{question, answer};

@@ -4,17 +4,16 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Utils.getRandomInt;
+
 public class Progression {
 
-    static final int BOUND = 100;
     static final int ROUND = 3;
-    static final int MAXSTEP = 10;
-    static final int MINSIZE = 5;
     private static String[] generateRoundData() {
         Random random = new Random();
-        var number1 = random.nextInt(BOUND);
-        var step = 1 + random.nextInt(MAXSTEP);
-        var size = MINSIZE + random.nextInt(MINSIZE);
+        var number1 = getRandomInt(0, 100);
+        var step = getRandomInt(0, 10);
+        var size = getRandomInt(5, 10);
         var value = random.nextInt(size);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];
