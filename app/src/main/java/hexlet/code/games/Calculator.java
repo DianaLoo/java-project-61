@@ -6,9 +6,10 @@ import static hexlet.code.Utils.getRandomInt;
 
 public class Calculator {
     static final int ROUND = 3;
+    static final int BOUND = 100;
     private static String[] generateRoundData() {
-        int number1 = getRandomInt(0, 100);
-        int number2 = getRandomInt(0, 100);
+        int number1 = getRandomInt(0, BOUND);
+        int number2 = getRandomInt(0, BOUND);
         String operator = String.valueOf(getRandom());
         String question = number1 + " " + operator + " " + number2;
         String answer = String.valueOf(checkAnswer(number1, number2, operator));

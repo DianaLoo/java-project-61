@@ -4,11 +4,12 @@ import static hexlet.code.Utils.getRandomInt;
 
 public class Even {
     static final int ROUND = 3;
+    static final int BOUND = 100;
     private static boolean gameEven(int number) {
         return number % 2 == 0;
     }
     private static String[] generateRoundData() {
-        var number = getRandomInt(0, 100);
+        var number = getRandomInt(0, BOUND);
         var question = String.valueOf(number);
         var answer = gameEven(number) ? "yes" : "no";
         return new String[] {question, answer};

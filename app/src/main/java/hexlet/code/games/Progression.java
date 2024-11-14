@@ -7,13 +7,15 @@ import java.util.Random;
 import static hexlet.code.Utils.getRandomInt;
 
 public class Progression {
-
+    static final int BOUND = 100;
     static final int ROUND = 3;
+    static final int MAXSIZE = 10;
+    static final int MINSIZE = 5;
     private static String[] generateRoundData() {
         Random random = new Random();
-        var number1 = getRandomInt(0, 100);
-        var step = getRandomInt(0, 10);
-        var size = getRandomInt(5, 10);
+        var number1 = getRandomInt(0, BOUND);
+        var step = getRandomInt(0, MAXSIZE);
+        var size = getRandomInt(MINSIZE, MAXSIZE);
         var value = random.nextInt(size);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];

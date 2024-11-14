@@ -5,10 +5,11 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomInt;
 
 public class GCD {
+    static final int BOUND = 100;
     static final int ROUND = 3;
     private static String[] generateRoundData() {
-        int number1 = getRandomInt(0, 100);
-        int number2 = getRandomInt(0, 100);
+        int number1 = getRandomInt(0, BOUND);
+        int number2 = getRandomInt(0, BOUND);
         String question = number1 + " " + number2;
         String answer = checkAnswer(number1, number2);
         return new String[]{question, answer};

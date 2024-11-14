@@ -6,6 +6,7 @@ import static hexlet.code.Utils.getRandomInt;
 
 public class Prime {
     static final int ROUND = 3;
+    static final int BOUND = 100;
     private static boolean gamePrime(int number) {
         if (number <= 1) {
             return false; // числа 0 и 1 не являются простыми
@@ -18,7 +19,7 @@ public class Prime {
         return true;
     }
     private static String[] generateRoundData() {
-        var number = getRandomInt(0, 100);
+        var number = getRandomInt(0, BOUND);
         var question = String.valueOf(number);
         var answer = gamePrime(number) ? "yes" : "no";
         return new String[] {question, answer};
