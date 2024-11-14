@@ -24,7 +24,7 @@ public class Calculator {
     }
 
     private static char getRandom() {
-        int rdm = getRandomInt(0, 3);
+        int rdm = getRandomInt(0, 2);
         char[] operators = new char[]{'+', '-', '*'};
         return operators[rdm];
     }
