@@ -5,11 +5,10 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomInt;
 
 public class Calculator {
-    static final int ROUND = 3;
-    static final int BOUND = 100;
+
     private static String[] generateRoundData() {
-        int number1 = getRandomInt(0, BOUND);
-        int number2 = getRandomInt(0, BOUND);
+        int number1 = getRandomInt(0, Engine.BOUND);
+        int number2 = getRandomInt(0, Engine.BOUND);
         String operator = String.valueOf(getRandom());
         String question = number1 + " " + operator + " " + number2;
         String answer = String.valueOf(checkAnswer(number1, number2, operator));
@@ -17,8 +16,8 @@ public class Calculator {
     }
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        String[][] roundsData = new String[ROUND][2];
-        for (int i = 0; i < ROUND; i += 1) {
+        String[][] roundsData = new String[Engine.ROUND][2];
+        for (int i = 0; i < Engine.ROUND; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

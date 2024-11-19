@@ -5,8 +5,7 @@ import hexlet.code.Engine;
 import static hexlet.code.Utils.getRandomInt;
 
 public class Prime {
-    static final int ROUND = 3;
-    static final int BOUND = 100;
+
     private static boolean gamePrime(int number) {
         if (number <= 1) {
             return false; // числа 0 и 1 не являются простыми
@@ -19,15 +18,15 @@ public class Prime {
         return true;
     }
     private static String[] generateRoundData() {
-        var number = getRandomInt(0, BOUND);
+        var number = getRandomInt(0, Engine.BOUND);
         var question = String.valueOf(number);
         var answer = gamePrime(number) ? "yes" : "no";
         return new String[] {question, answer};
     }
     public static void runGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = new String[ROUND][2];
-        for (int i = 0; i < ROUND; i += 1) {
+        String[][] roundsData = new String[Engine.ROUND][2];
+        for (int i = 0; i < Engine.ROUND; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

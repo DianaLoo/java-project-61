@@ -3,10 +3,11 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    static final int ROUND = 3;
+    public static final int ROUND = 3;
+    public static final int BOUND = 100;
+
     public static void run(String description, String[][] roundsData) {
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
@@ -21,13 +22,10 @@ public class Engine {
                 String part1 = ("'" + userAnswer + "'" + "is wrong answer ;(. Correct answer was");
                 System.out.println(part1 + "'" + correctAnswer + "'");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
             System.out.println("Correct!");
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
-
 }
