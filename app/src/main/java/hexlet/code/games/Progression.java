@@ -11,7 +11,7 @@ public class Progression {
     private static String[] generateRoundData() {
         var number1 = getRandomInt(0, Engine.BOUND);
         var step = getRandomInt(0, MAXSIZE);
-        var size = getRandomInt(MINSIZE, MAXSIZE);
+        int size = getRandomInt(MINSIZE, MAXSIZE);
         var value = getRandomInt(0, size);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];
