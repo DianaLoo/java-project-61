@@ -12,7 +12,7 @@ public class Progression {
         var number1 = getRandomInt(0, Engine.BOUND);
         var step = getRandomInt(0, MAXSIZE);
         int size = getRandomInt(MINSIZE, MAXSIZE);
-        var value = getRandomInt(0, size);
+        var value = getRandomInt(0, size - 1);
         var progression = checkAnswer(number1, step, size);
         String[] prog = new String[2];
         prog[1] = progression[value];
